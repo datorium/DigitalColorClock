@@ -29,12 +29,41 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.ClockDisplay = new System.Windows.Forms.Label();
+            this.ClockTimer = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // ClockDisplay
+            // 
+            this.ClockDisplay.AutoSize = true;
+            this.ClockDisplay.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClockDisplay.Location = new System.Drawing.Point(57, 51);
+            this.ClockDisplay.Name = "ClockDisplay";
+            this.ClockDisplay.Size = new System.Drawing.Size(469, 111);
+            this.ClockDisplay.TabIndex = 0;
+            this.ClockDisplay.Text = "00:00:00:0";
+            // 
+            // ClockTimer
+            // 
+            this.ClockTimer.Tick += new System.EventHandler(this.ClockTimer_Tick);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(581, 296);
+            this.Controls.Add(this.ClockDisplay);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label ClockDisplay;
+        private System.Windows.Forms.Timer ClockTimer;
     }
 }
 
